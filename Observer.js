@@ -17,18 +17,17 @@ class Publisher {
     }
 }
 
-function log(item) {
-    console.log(item);
+function log(data) {
+    console.log(`Observer #1: ${data}`);
 }
 
-function warning(item) {
-    alert(item);
+function anotherLog(data) {
+    console.log(`Observer #2: ${data}`);
 }
 
 var Observer = new Publisher();
 
 Observer.subscribe(log);
-Observer.subscribe(warning);
+Observer.subscribe(anotherLog);
 
 Observer.notifiy('Data sent!');
-
